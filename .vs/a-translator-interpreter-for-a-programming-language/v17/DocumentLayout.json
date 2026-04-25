@@ -18,11 +18,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
@@ -32,7 +36,7 @@
               "RelativeDocumentMoniker": "README.md",
               "ToolTip": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\README.md",
               "RelativeToolTip": "README.md",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAEsAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
               "WhenOpened": "2026-04-25T04:16:21.946Z",
               "EditorCaption": ""
