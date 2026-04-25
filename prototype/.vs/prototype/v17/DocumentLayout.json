@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0C31EF7E-CECE-4971-87CC-820C78BA7016}|prototype\\prototype.vcxproj|C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\prototype.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0C31EF7E-CECE-4971-87CC-820C78BA7016}|prototype\\prototype.vcxproj|solutionrelative:prototype\\prototype.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "prototype.cpp",
+              "DocumentMoniker": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\prototype.cpp",
+              "RelativeDocumentMoniker": "prototype\\prototype.cpp",
+              "ToolTip": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\prototype.cpp",
+              "RelativeToolTip": "prototype\\prototype.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-25T04:10:05.201Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
