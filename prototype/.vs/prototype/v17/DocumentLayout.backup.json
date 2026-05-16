@@ -1,0 +1,49 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Dell\\OneDrive\\Documents\\TGU\\Year 3\\Key 2\\Method creampie - Kostyuk 1\\a-translator-interpreter-for-a-programming-language\\prototype\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0C31EF7E-CECE-4971-87CC-820C78BA7016}|prototype\\prototype.vcxproj|C:\\Users\\Dell\\OneDrive\\Documents\\TGU\\Year 3\\Key 2\\Method creampie - Kostyuk 1\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\prototype.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0C31EF7E-CECE-4971-87CC-820C78BA7016}|prototype\\prototype.vcxproj|solutionrelative:prototype\\prototype.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "prototype.cpp",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Documents\\TGU\\Year 3\\Key 2\\Method creampie - Kostyuk 1\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\prototype.cpp",
+              "RelativeDocumentMoniker": "prototype\\prototype.cpp",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Documents\\TGU\\Year 3\\Key 2\\Method creampie - Kostyuk 1\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\prototype.cpp",
+              "RelativeToolTip": "prototype\\prototype.cpp",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAL0BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-25T04:10:05.201Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
