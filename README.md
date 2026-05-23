@@ -5,7 +5,7 @@
 Разработать транслятор-интерпретатор для языка программирования. 
 
 # Ссылка на таблицы
-https://docs.google.com/spreadsheets/d/161630_R5Mv57u2yJwXLUU-nD3Z_VwlPoSmKRPFF1Tfk/edit?usp=drive_link
+https://drive.google.com/drive/folders/1IUHzG8RJDEzZqyWFfWX4i9gfU9zcBMp0?usp=sharing
 
 ## Минимальные требования к языку: 
 1) типы данных – целые или вещественные числа (константы) и переменные (можно 
