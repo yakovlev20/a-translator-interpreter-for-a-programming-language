@@ -1,28 +1,45 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <map>
 #include "tokentype.h"
 
 using namespace std;
+
+enum TokenType {
+    ID,
+    IDENTIFIER,
+    INTEGER,
+    FLOAT,
+    ASSIGN,
+    DELIMITER,
+    ELSE
+};
+
 
 class Token {
 public:
     TokenType type;
     string value;
-    Token(TokenType t, const string& v) : type(t), value(v) {}
+    Token(TokenType t, const string& v = "") : type(t), value(v) {}
 
-}
+};
 
 
 class Lexer
 {
 public:
-
-    vector<string> tokenize(string code)
+    vector<Token> tokenize(string code)
     {
-        do {
-            
-        } while 
+
+        for (int i = 0; i < code.length(); i++) {
+            char c = code[i];
+            if (isalpha(c)) {
+                
+}
+            }
+
+        }
     }
 
 private:
