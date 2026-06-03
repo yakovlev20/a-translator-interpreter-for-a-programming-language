@@ -8,7 +8,7 @@ using namespace std;
 
 
 int main() {
-    string code = "var a = 10;\n var b = 11;\n var c = a + b;\n";
+    string code = "var a = 10;\n var b = 11.5;\n var c = a + b * d;\n";
     Lexer l(code);
     vector<Token*> token = l.tokenize();
     

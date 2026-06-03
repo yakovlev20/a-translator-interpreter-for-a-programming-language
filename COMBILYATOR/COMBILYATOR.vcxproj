@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="LEXER.h" />
+    <ClInclude Include="PARSER.h" />
     <ClInclude Include="Token.h" />
   </ItemGroup>
   <ItemGroup>
