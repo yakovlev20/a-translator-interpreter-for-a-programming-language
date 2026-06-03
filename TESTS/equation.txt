@@ -10,5 +10,10 @@ begin {
     in d;
     in e;
     
+    out a + b;
+    out c * d + e;
+    out c * c * c * c * c;
+    out b + (c / d) - e * d;
     out a * (b + (b * c)) / d - e;  
+    
 } end
