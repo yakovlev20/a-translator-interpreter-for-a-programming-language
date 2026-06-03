@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Dell\\OneDrive\\Documents\\TGU\\Year 3\\Key 2\\Method creampie - Kostyuk 1\\a-translator-interpreter-for-a-programming-language\\COMBILYATOR\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8582F855-60FC-468E-8FB8-E8A727C3B914}|COMBILYATOR.vcxproj|C:\\Users\\Dell\\OneDrive\\Documents\\TGU\\Year 3\\Key 2\\Method creampie - Kostyuk 1\\a-translator-interpreter-for-a-programming-language\\COMBILYATOR\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{8582F855-60FC-468E-8FB8-E8A727C3B914}|COMBILYATOR.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{8582F855-60FC-468E-8FB8-E8A727C3B914}|COMBILYATOR.vcxproj|C:\\Users\\Dell\\OneDrive\\Documents\\TGU\\Year 3\\Key 2\\Method creampie - Kostyuk 1\\a-translator-interpreter-for-a-programming-language\\COMBILYATOR\\PARSER.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8582F855-60FC-468E-8FB8-E8A727C3B914}|COMBILYATOR.vcxproj|solutionrelative:PARSER.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8582F855-60FC-468E-8FB8-E8A727C3B914}|COMBILYATOR.vcxproj|C:\\Users\\Dell\\OneDrive\\Documents\\TGU\\Year 3\\Key 2\\Method creampie - Kostyuk 1\\a-translator-interpreter-for-a-programming-language\\COMBILYATOR\\LEXER.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{8582F855-60FC-468E-8FB8-E8A727C3B914}|COMBILYATOR.vcxproj|solutionrelative:LEXER.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{8582F855-60FC-468E-8FB8-E8A727C3B914}|COMBILYATOR.vcxproj|C:\\Users\\Dell\\OneDrive\\Documents\\TGU\\Year 3\\Key 2\\Method creampie - Kostyuk 1\\a-translator-interpreter-for-a-programming-language\\COMBILYATOR\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8582F855-60FC-468E-8FB8-E8A727C3B914}|COMBILYATOR.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8582F855-60FC-468E-8FB8-E8A727C3B914}|COMBILYATOR.vcxproj|C:\\Users\\Dell\\OneDrive\\Documents\\TGU\\Year 3\\Key 2\\Method creampie - Kostyuk 1\\a-translator-interpreter-for-a-programming-language\\COMBILYATOR\\Token.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{8582F855-60FC-468E-8FB8-E8A727C3B914}|COMBILYATOR.vcxproj|solutionrelative:Token.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8582F855-60FC-468E-8FB8-E8A727C3B914}|COMBILYATOR.vcxproj|C:\\Users\\Dell\\OneDrive\\Documents\\TGU\\Year 3\\Key 2\\Method creampie - Kostyuk 1\\a-translator-interpreter-for-a-programming-language\\COMBILYATOR\\PARSER.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{8582F855-60FC-468E-8FB8-E8A727C3B914}|COMBILYATOR.vcxproj|solutionrelative:PARSER.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{8582F855-60FC-468E-8FB8-E8A727C3B914}|COMBILYATOR.vcxproj|C:\\Users\\Dell\\OneDrive\\Documents\\TGU\\Year 3\\Key 2\\Method creampie - Kostyuk 1\\a-translator-interpreter-for-a-programming-language\\COMBILYATOR\\LEXER.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8582F855-60FC-468E-8FB8-E8A727C3B914}|COMBILYATOR.vcxproj|solutionrelative:LEXER.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,17 +44,17 @@
         },
         {
           "DockedWidth": 237,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "LEXER.h",
               "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Documents\\TGU\\Year 3\\Key 2\\Method creampie - Kostyuk 1\\a-translator-interpreter-for-a-programming-language\\COMBILYATOR\\LEXER.h",
               "RelativeDocumentMoniker": "LEXER.h",
               "ToolTip": "C:\\Users\\Dell\\OneDrive\\Documents\\TGU\\Year 3\\Key 2\\Method creampie - Kostyuk 1\\a-translator-interpreter-for-a-programming-language\\COMBILYATOR\\LEXER.h",
               "RelativeToolTip": "LEXER.h",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAuwGQAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-05-31T04:43:06.973Z",
               "IsPinned": true,
@@ -68,32 +68,34 @@
               "RelativeDocumentMoniker": "Token.h",
               "ToolTip": "C:\\Users\\Dell\\OneDrive\\Documents\\TGU\\Year 3\\Key 2\\Method creampie - Kostyuk 1\\a-translator-interpreter-for-a-programming-language\\COMBILYATOR\\Token.h",
               "RelativeToolTip": "Token.h",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAAAJMAAABRAAAAAAAAAA==",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAJMAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-05-31T05:43:55.911Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "PARSER.h",
               "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Documents\\TGU\\Year 3\\Key 2\\Method creampie - Kostyuk 1\\a-translator-interpreter-for-a-programming-language\\COMBILYATOR\\PARSER.h",
               "RelativeDocumentMoniker": "PARSER.h",
               "ToolTip": "C:\\Users\\Dell\\OneDrive\\Documents\\TGU\\Year 3\\Key 2\\Method creampie - Kostyuk 1\\a-translator-interpreter-for-a-programming-language\\COMBILYATOR\\PARSER.h",
               "RelativeToolTip": "PARSER.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-05-31T16:27:09.28Z"
+              "WhenOpened": "2026-05-31T16:27:09.28Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Documents\\TGU\\Year 3\\Key 2\\Method creampie - Kostyuk 1\\a-translator-interpreter-for-a-programming-language\\COMBILYATOR\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\Dell\\OneDrive\\Documents\\TGU\\Year 3\\Key 2\\Method creampie - Kostyuk 1\\a-translator-interpreter-for-a-programming-language\\COMBILYATOR\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-05-31T04:28:09.986Z",
               "EditorCaption": ""
