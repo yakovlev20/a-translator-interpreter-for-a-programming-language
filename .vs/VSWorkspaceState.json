@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\COMBILYATOR",
     "\\prototype",
+    "\\prototype faill",
     "\\prototype\\prototype"
   ],
+  "SelectedNode": "\\COMBILYATOR\\Token.h",
   "PreviewInSolutionExplorer": false
 }
