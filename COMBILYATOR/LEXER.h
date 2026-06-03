@@ -6,7 +6,7 @@
 #include <cmath>
 #include "Token.h"
 
-#define TEST 1
+#define TEST 0
 
 using namespace std;
 
@@ -99,8 +99,6 @@ class Lexer {
             if (input[input.length() - 1] != '┴') input += '┴';
             tokens = vector<Token*>(); 
             buffer = nullptr; 
-
-            cout << "CODE: " << input << " \tlength " << input.length() << endl;
         }
 
         vector<Token*> tokenize() {

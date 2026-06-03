@@ -6,7 +6,7 @@
 
 using namespace std;
 
-
+//надо добавить скопы 
 int main() {
     string code = "var a = 10;\n var b = 11;\n var c = a + b;\n";
     Lexer l(code);

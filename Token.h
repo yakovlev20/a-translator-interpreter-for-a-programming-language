@@ -14,7 +14,7 @@ enum TokenType {
     FLOAT,
     ASSIGN,
     ELSE,
-    DELIMITER,
+    SEMICOLON,
     NEWLINE
 };
 
@@ -117,10 +117,10 @@ class ElseToken : public Token {
         }
 };
 
-class DelimiterToken : public Token {
+class SemicolonToken : public Token {
     public:
         string value;
-        DelimiterToken(string value) : Token(TokenType::DELIMITER) {
+        SemicolonToken(string value) : Token(TokenType::SEMICOLON) {
             this->value = value;
         }
 
@@ -129,7 +129,7 @@ class DelimiterToken : public Token {
         }
 
         void print(ostream& os) const override {
-            os << std::left << std::setw(25) << "Token: DELIMITER" << "Value: "<< value << endl;
+            os << std::left << std::setw(25) << "Token: SEMICOLON" << "Value: "<< value << endl;
         }
 };
 

@@ -131,7 +131,7 @@ class Lexer {
                     } else if (curr == ' ') {
   
                     } else if (curr == ';') {
-                        tokens.push_back(new DelimiterToken(";"));
+                        tokens.push_back(new SemicolonToken(";"));
                     } else if (isMiscellaneous(curr)) {
                         tokens.push_back(new ElseToken(to_string(curr)));
                     } else if (curr == '┴') {
@@ -167,8 +167,6 @@ class Lexer {
                         i--;
                         delete buffer;
                         currentState = MachineState::START;
-                    } else if (curr == '\n') {
-                        tokens.push_back(new NewlineToken("\n"));
                     } else if (curr == '┴') {
                         tokens.push_back(new IntegerToken(buffer->toInt()));
                         i--;
