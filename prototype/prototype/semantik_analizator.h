@@ -4,6 +4,8 @@
 #include <unordered_map>
 #include <string>
 
+setlocale(LC_ALL, "Russian");
+
 class SemanticAnalyzer {
 private:
     std::stack<int> labelStack;        // Магазин меток
