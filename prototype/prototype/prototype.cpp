@@ -11,23 +11,50 @@
 #include <cmath>
 #include <stack>
 
-#include <C:\репозитории\a-translator-interpreter-for-a-programming-language\prototype\prototype\semantik_analizator.h>
+#include <C:\репозитории\a-translator-interpreter-for-a-programming-language\prototype\prototype\PARSER.h>
+#include <C:\репозитории\a-translator-interpreter-for-a-programming-language\prototype\prototype\S_ANALIZATOR.h>
+
 
 int main() {
+
+    setlocale(LC_ALL, "Russian");
+
+    std::cout << "\nСемантический анализатор: \n";
     SemanticAnalyzer analyzer;
 
-    analyzer.program4(100);           // Добавляем метку 100 в стек
-    analyzer.program1(200);           // Добавляем метку 200 и условный переход
-    analyzer.program2(300);          // Обновляем метку, добавляем метку 300 и безусловный переход
-    analyzer.program3(400);          // Обновляем верхнюю метку в стеке до 400
-    analyzer.program5(50);           // Вычисляем метку 52 (50+2), обновляем предыдущую, добавляем переход
+    // Примеры строк для анализа
+    std::vector<std::string> testLines = {
+        "array myArray[10];",
+        "myArray[0] = 5;",
+        "invalid code here",
+        ""
+    };
 
-    analyzer.program7();              // Переключаемся в режим массивов
-    analyzer.program8("myArray");     // Объявляем массив "myArray"
-    analyzer.program9("myArray", 10); // Выделяем для него 10 элементов
+    for (const auto& line : testLines) {
+        std::cout << "Анализируем: " << line << "\n";
+        bool isValid = analyzer.analyze(line);
+        std::cout << (isValid ? "КОРРЕКТНО" : "ОШИБКА") << "\n\n";
+    }
 
-    analyzer.printRPN();              // Выводим итоговую ОПС
+    analyzer.printRPN();
+
+    std::cout << "\nПарсер: \n";
+    Parser analyzer1;
+
+    analyzer1.program4(100);           // Добавляем метку 100 в стек
+    analyzer1.program1(200);           // Добавляем метку 200 и условный переход
+    analyzer1.program2(300);          // Обновляем метку, добавляем метку 300 и безусловный переход
+    analyzer1.program3(400);          // Обновляем верхнюю метку в стеке до 400
+    analyzer1.program5(50);           // Вычисляем метку 52 (50+2), обновляем предыдущую, добавляем переход
+
+    analyzer1.program7();              // Переключаемся в режим массивов
+    analyzer1.program8("myArray");     // Объявляем массив "myArray"
+    analyzer1.program9("myArray", 10); // Выделяем для него 10 элементов
+
+    analyzer1.printRPN();              // Выводим итоговую ОПС
+    
     return 0;
+
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
