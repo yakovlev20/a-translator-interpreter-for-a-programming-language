@@ -189,16 +189,9 @@ private:
     }
 
 public:
-    void printRPN() const {
-        std::cout << "ног:\n";
-        for (const auto& item : rpn) {
-            std::cout << item << "\n";
-        }
-    }
-
     void reset() {
         while (!labelStack.empty()) labelStack.pop();
         rpn.clear();
         arrays.clear();
     }
-};
+}
