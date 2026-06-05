@@ -11,11 +11,24 @@
 #include <stack>
 #include <fstream>
 
-#include "C:\репозитории\a-translator-interpreter-for-a-programming-language\prototype\prototype\Token.h"
-#include "C:\репозитории\a-translator-interpreter-for-a-programming-language\prototype\prototype\LEXER.h"
+#include "LEXER.h"
+#include "PARSER.h"
+#include "Token.h"
+#include "ParserToken.h"
 
-#include <C:\репозитории\a-translator-interpreter-for-a-programming-language\prototype\prototype\PARSER.h>
-#include <C:\репозитории\a-translator-interpreter-for-a-programming-language\prototype\prototype\S_ANALIZATOR1.h>
+//#include "C:\репозитории\a-translator-interpreter-for-a-programming-language\prototype\prototype\Token.h"
+//#include "C:\репозитории\a-translator-interpreter-for-a-programming-language\prototype\prototype\LEXER.h"
+
+//#include <C:\репозитории\a-translator-interpreter-for-a-programming-language\prototype\prototype\PARSER.h>
+//#include <C:\репозитории\a-translator-interpreter-for-a-programming-language\prototype\prototype\S_ANALIZATOR1.h>
+
+using namespace std;
+
+#define SHOW_CODE 1
+#define SHOW_LEXER 1
+#define SHOW_PARSER 1
+
+static ifstream codeFile("inout.txt");
 
 
 int main() {
@@ -28,6 +41,31 @@ int main() {
 
     for (auto& i : token) {
         cout << *i;
+    }
+
+    string code, line;
+    if (codeFile.is_open()) {
+        while (!codeFile.eof()) {
+            getline(codeFile, line);
+            code += line + "\n";
+        }
+
+        string code1 = "begin { array a[10]; a[0] := 10; a[1] := 1 + 2;}  end ";
+
+        if (SHOW_CODE) cout << "Code: \n" << code1 << endl << endl << endl;
+        Lexer l(code1);
+        vector<Token> tokens = l.tokenize();
+
+        if (SHOW_LEXER) for (auto& i : tokens) cout << i;
+
+        if (SHOW_PARSER) cout << "----- RPN output -----" << endl;
+        Parser parser(tokens);
+        vector<Poken> rpn = parser.parse();
+        if (SHOW_PARSER) for (auto& p : rpn) cout << p;
+
+    }
+    else {
+        cout << "File is dead lmao";
     }
 
     std::cout << "\nСемантический анализатор: \n";
@@ -64,24 +102,6 @@ int main() {
         std::cerr << "Ошибка: " << e.what() << "\n";
     }
 
-    // Выводим результат в ОПЗ (обратной польской записи)
-    analyzer.printRPN();
-
-    std::cout << "\nПарсер: \n";
-    Parser analyzer1;
-
-    analyzer1.program4(100);           // Добавляем метку 100 в стек
-    analyzer1.program1(200);           // Добавляем метку 200 и условный переход
-    analyzer1.program2(300);          // Обновляем метку, добавляем метку 300 и безусловный переход
-    analyzer1.program3(400);          // Обновляем верхнюю метку в стеке до 400
-    analyzer1.program5(50);           // Вычисляем метку 52 (50+2), обновляем предыдущую, добавляем переход
-
-    analyzer1.program7();              // Переключаемся в режим массивов
-    analyzer1.program8("myArray");     // Объявляем массив "myArray"
-    analyzer1.program9("myArray", 10); // Выделяем для него 10 элементов
-
-    analyzer1.printRPN();              // Выводим итоговую ОПС
-    
     return 0;
 
 }

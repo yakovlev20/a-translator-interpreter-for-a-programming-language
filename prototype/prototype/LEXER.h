@@ -4,11 +4,12 @@
 #include <vector>
 #include <string>
 #include <cmath>
-#include "C:\репозитории\a-translator-interpreter-for-a-programming-language\prototype\prototype\Token.h"
+#include "Token.h"
 
 #define TEST 0
 
 using namespace std;
+using Value = std::variant<int, double, string>;
 
 enum MachineState {
     START, 
@@ -83,7 +84,7 @@ public:
     }
 };
 
-static const vector<char> Miscellaneous({'<', '>', '+', '-', '*', '(', ')', '{', '}', '[', ']', ','});
+static const vector<char> Miscellaneous({'<', '>', '+', '-', '*', '/', '(', ')', '{', '}', '[', ']', ','});
 bool isMiscellaneous(char symbol) {
     for (const auto& i : Miscellaneous) if (symbol == i) return true;
     return false;
@@ -91,17 +92,21 @@ bool isMiscellaneous(char symbol) {
 
 class Lexer {
     string input;
-    vector<Token*> tokens;
+    vector<Token> tokens;
     BufferValue* buffer;
 
     public:
         Lexer(string input) : input(input) { 
-            if (input[input.length() - 1] != '┴') input += '┴';
-            tokens = vector<Token*>(); 
+            if (input[input.length() - 1] != '┴') {
+                this->input += '┴';
+            }
+            if (TEST) cout << this->input << endl;
+            tokens = vector<Token>(); 
             buffer = nullptr; 
         }
 
-        vector<Token*> tokenize() {
+        //State table
+        vector<Token> tokenize() {
             MachineState currentState = MachineState::START;
             int i = 0;
             do {
@@ -117,11 +122,11 @@ class Lexer {
                         buffer = new BufferValue(DataType::AQ_INTEGER);
                         i--;
                     } else if (curr == '=') {
-                        tokens.push_back(new ElseToken("="));
+                        tokens.push_back(Token(TokenType::ELSE, Value(string("="))));
                     } else if (curr == '\\') {
                         currentState = MachineState::WNLN;
                     } else if (curr == '\n') {
-                        tokens.push_back(new NewlineToken("\n"));
+                        tokens.push_back(Token(TokenType::NEWLINE, Value(string("\n"))));
                     } else if (curr == ':') {
                         currentState = MachineState::WASS;
                     } else if (curr == '!') {
@@ -129,9 +134,9 @@ class Lexer {
                     } else if (curr == ' ') {
   
                     } else if (curr == ';') {
-                        tokens.push_back(new DelimiterToken(";"));
+                        tokens.push_back(Token(TokenType::ELSE, Value(string(";"))));
                     } else if (isMiscellaneous(curr)) {
-                        tokens.push_back(new ElseToken(to_string(curr)));
+                        tokens.push_back(Token(TokenType::ELSE, Value(string(1, (char)curr))));
                     } else if (curr == '┴') {
                         currentState = MachineState::END;
                     } else {
@@ -140,15 +145,17 @@ class Lexer {
                 } else if (currentState == MachineState::IDN) {
                     if (isalnum(curr)) {
                         buffer->add(curr);
-                    } else if (curr == ' ' || curr == ';' || curr == ':' || curr == '!' || curr == '=' || isMiscellaneous(curr)) {
-                        tokens.push_back(new IdentificatorToken(buffer->toString()));
+                    } else if (curr == ' ' || curr == ';' || curr == ':' || curr == '!' || curr == '=' || curr == '\\' || curr == '\n' || isMiscellaneous(curr)) {
+                        tokens.push_back(Token(TokenType::IDENTIFICATOR, Value(buffer->toString())));
                         i--;
                         delete buffer;
+                        buffer = nullptr;
                         currentState = MachineState::START;
                     } else if (curr == '┴') {
-                        tokens.push_back(new IdentificatorToken(buffer->toString()));
+                        tokens.push_back(Token(TokenType::IDENTIFICATOR, Value(buffer->toString())));
                         i--;
                         delete buffer;
+                        buffer = nullptr;
                         currentState = MachineState::END;
                     } else {
                         currentState = MachineState::ERR;
@@ -160,17 +167,17 @@ class Lexer {
                         buffer->add(curr);
                         currentState = MachineState::FLT;
                         buffer->changeType(DataType::AQ_FLOAT);
-                    } else if (curr == ' ' || curr == ';' || curr == ':' || curr == '!' || curr == '=' || curr == '\\' || isMiscellaneous(curr)) {
-                        tokens.push_back(new IntegerToken(buffer->toInt()));
+                    } else if (curr == ' ' || curr == ';' || curr == ':' || curr == '!' || curr == '=' || curr == '\\' || curr == '\n' || isMiscellaneous(curr)) {
+                        tokens.push_back(Token(TokenType::INTERGER, buffer->toInt()));
                         i--;
                         delete buffer;
+                        buffer = nullptr;
                         currentState = MachineState::START;
-                    } else if (curr == '\n') {
-                        tokens.push_back(new NewlineToken("\n"));
                     } else if (curr == '┴') {
-                        tokens.push_back(new IntegerToken(buffer->toInt()));
+                        tokens.push_back(Token(TokenType::INTERGER, buffer->toInt()));
                         i--;
                         delete buffer;
+                        buffer = nullptr;
                         currentState = MachineState::END;
                     } else {
                         currentState = MachineState::ERR;
@@ -179,7 +186,7 @@ class Lexer {
                     if (isdigit(curr)) {
                         buffer->add(curr);
                         currentState = MachineState::FLT;
-                    } if (curr == '┴') {
+                    } else if (curr == '┴') {
                         currentState = MachineState::ERR;
                     } else {
                         currentState = MachineState::ERR;
@@ -187,55 +194,55 @@ class Lexer {
                 } else if (currentState == MachineState::FLT) {
                     if (isdigit(curr)) {
                         buffer->add(curr);
-                    } else if (curr == ' ' || curr == ';' || curr == ':' || curr == '!' || curr == '=' || curr == '\\' || isMiscellaneous(curr)) {
-                        tokens.push_back(new FloatToken(buffer->toFloat()));
+                    } else if (curr == ' ' || curr == ';' || curr == ':' || curr == '!' || curr == '=' || curr == '\\' || curr == '\n' || isMiscellaneous(curr)) {
+                        tokens.push_back(Token(TokenType::FLOAT, Value(buffer->toFloat())));
                         i--;
                         delete buffer;
                         currentState = MachineState::START;
                     } else if (curr == '┴') {
-                        tokens.push_back(new FloatToken(buffer->toFloat()));
+                        tokens.push_back(Token(TokenType::FLOAT, Value(buffer->toFloat())));
                         i--;
                         delete buffer;
+                        buffer = nullptr;
                         currentState = MachineState::END;
                     } else {
                         currentState = MachineState::ERR;
                     }
                 } else if (currentState == MachineState::WASS) {
                     if (curr == '=') {
-                        tokens.push_back(new AssignToken(":="));
+                        tokens.push_back(Token(TokenType::ASSIGN, Value(":=")));
                         currentState = MachineState::START;
-                    } if (curr == '┴') {
+                    } else if (curr == '┴') {
                         currentState = MachineState::ERR;
                     } else {
                         currentState = MachineState::ERR;
                     }
                 } else if (currentState == MachineState::WNEQ) {
                     if (curr == '=') {
-                        tokens.push_back(new ElseToken("!="));
+                        tokens.push_back(Token(TokenType::ELSE, Value("!=")));
                         currentState = MachineState::START;
-                    } if (curr == '┴') {
-                        currentState = MachineState::ERR;
                     } else {
                         currentState = MachineState::ERR;
                     }
                 } else if (currentState == MachineState::WNLN) {
                     if (curr == 'n') {
-                        tokens.push_back(new NewlineToken("\n"));
+                        tokens.push_back(Token(TokenType::NEWLINE, Value("\n")));
                         currentState = MachineState::START;
-                    } if (curr == '┴') {
+                    } else if (curr == '┴') {
                         currentState = MachineState::ERR;
                     } else {
                         currentState = MachineState::ERR;
                     }
                 } else if (currentState == MachineState::ERR) {         // ERROR CODE INCOMPLETE
-                    cout << "ERROR AT i = " << i-1 << "(" << input[i-1] << ")" << endl;
+                    cout << "ERROR AT i = " << i-1 << "(" << input[i - 3] << input[i - 2] << input[i-1] << input[i] << input[i+1] << input[i + 2] << ")" << endl;
                     break;
                 } else if (currentState == MachineState::END) {
                     break;
                 }
                 i++;
             } while (i < input.length());
-            //delete buffer;
+            //Last cycle
+/**/
             return tokens;
         }            
 };

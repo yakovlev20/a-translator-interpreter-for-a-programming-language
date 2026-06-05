@@ -1,0 +1,19 @@
+begin {
+    var a := 10;
+    var b := 0;
+    var c := 0;
+    var d := 0;
+    var e := 0;
+    
+    get b;
+    get c;
+    get d;
+    get e;
+    
+    print a + b;
+    print c * d + e;
+    print c * c * c * c * c;
+    print b + (c / d) - e * d;
+    print a * (b + (b * c)) / d - e;  
+    
+} end

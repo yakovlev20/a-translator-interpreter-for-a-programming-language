@@ -7,8 +7,13 @@
 #include <fstream>
 #include <sstream>
 
-#include "C:\репозитории\a-translator-interpreter-for-a-programming-language\prototype\prototype\Token.h"
-#include "C:\репозитории\a-translator-interpreter-for-a-programming-language\prototype\prototype\LEXER.h"
+#include "LEXER.h"
+#include "PARSER.h"
+#include "Token.h"
+#include "ParserToken.h"
+
+//#include "C:\репозитории\a-translator-interpreter-for-a-programming-language\prototype\prototype\Token.h"
+//#include "C:\репозитории\a-translator-interpreter-for-a-programming-language\prototype\prototype\LEXER.h"
 
 class SemanticAnalyzer {
 private:

@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\COMBILYATOR\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:COMBILYATOR\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\prototype.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:prototype\\prototype\\prototype.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\S_ANALIZATOR1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:prototype\\prototype\\S_ANALIZATOR1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -19,8 +11,28 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:prototype\\prototype\\LEXER.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\Token.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:prototype\\prototype\\Token.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\terminal_output.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:prototype\\prototype\\terminal_output.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\test.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:prototype\\prototype\\test.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\prototype.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:prototype\\prototype\\prototype.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\PARSER.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:prototype\\prototype\\PARSER.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\INTEPRETER.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:prototype\\prototype\\INTEPRETER.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\prototype1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -38,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,59 +70,98 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "main.cpp",
-              "DocumentMoniker": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\COMBILYATOR\\main.cpp",
-              "RelativeDocumentMoniker": "COMBILYATOR\\main.cpp",
-              "ToolTip": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\COMBILYATOR\\main.cpp",
-              "RelativeToolTip": "COMBILYATOR\\main.cpp",
+              "DocumentIndex": 3,
+              "Title": "terminal_output.txt",
+              "DocumentMoniker": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\terminal_output.txt",
+              "RelativeDocumentMoniker": "prototype\\prototype\\terminal_output.txt",
+              "ToolTip": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\terminal_output.txt",
+              "RelativeToolTip": "prototype\\prototype\\terminal_output.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-05T04:57:47.984Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-06-05T06:11:35.424Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "test.txt",
+              "DocumentMoniker": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\test.txt",
+              "RelativeDocumentMoniker": "prototype\\prototype\\test.txt",
+              "ToolTip": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\test.txt",
+              "RelativeToolTip": "prototype\\prototype\\test.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-06-05T06:11:32.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "INTEPRETER.h",
+              "DocumentMoniker": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\INTEPRETER.h",
+              "RelativeDocumentMoniker": "prototype\\prototype\\INTEPRETER.h",
+              "ToolTip": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\INTEPRETER.h",
+              "RelativeToolTip": "prototype\\prototype\\INTEPRETER.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-05T06:06:31.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "PARSER.h",
               "DocumentMoniker": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\PARSER.h",
               "RelativeDocumentMoniker": "prototype\\prototype\\PARSER.h",
               "ToolTip": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\PARSER.h",
               "RelativeToolTip": "prototype\\prototype\\PARSER.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-05T04:53:35.243Z",
+              "WhenOpened": "2026-06-05T06:02:20.086Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "Token.h",
+              "DocumentMoniker": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\Token.h",
+              "RelativeDocumentMoniker": "prototype\\prototype\\Token.h",
+              "ToolTip": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\Token.h",
+              "RelativeToolTip": "prototype\\prototype\\Token.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-05T05:58:38.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "LEXER.h",
               "DocumentMoniker": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\LEXER.h",
               "RelativeDocumentMoniker": "prototype\\prototype\\LEXER.h",
               "ToolTip": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\LEXER.h",
               "RelativeToolTip": "prototype\\prototype\\LEXER.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-06-05T04:53:25.538Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "S_ANALIZATOR1.h",
               "DocumentMoniker": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\S_ANALIZATOR1.h",
               "RelativeDocumentMoniker": "prototype\\prototype\\S_ANALIZATOR1.h",
               "ToolTip": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\S_ANALIZATOR1.h",
               "RelativeToolTip": "prototype\\prototype\\S_ANALIZATOR1.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMYAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAALEAAAAAAAAAAAAAAMUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-06-05T04:49:57.121Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "prototype1.h",
               "DocumentMoniker": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\prototype1.h",
               "RelativeDocumentMoniker": "prototype\\prototype\\prototype1.h",
@@ -123,20 +174,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "prototype.cpp",
               "DocumentMoniker": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\prototype.cpp",
               "RelativeDocumentMoniker": "prototype\\prototype\\prototype.cpp",
               "ToolTip": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\prototype\\prototype\\prototype.cpp",
               "RelativeToolTip": "prototype\\prototype\\prototype.cpp",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-06-04T07:35:58.125Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "inout.txt",
               "DocumentMoniker": "C:\\\u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0438\\a-translator-interpreter-for-a-programming-language\\TESTS\\inout.txt",
               "RelativeDocumentMoniker": "TESTS\\inout.txt",

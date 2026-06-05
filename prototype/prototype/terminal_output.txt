@@ -1,0 +1,407 @@
+Code:
+begin {
+    var n := 1;
+    in n;
+
+    array A[n];
+    var i := 0;
+    while ( i < n) {
+        in A[i];
+        i := i + 1;
+    }
+
+    i := 0;
+    j := 1;
+    while (i < n) {
+        while (j < n) {
+            if (A[i] > A[j]) then {
+                var temp := A[i];
+                A[i] := A[j];
+                A[j] := temp;
+            }
+            j := j + 1;
+        }
+        i := i + 1;
+    }
+
+    i := 0;
+    while ( i < n) {
+        out A[i];
+        i := i + 1;
+    }
+
+} end
+
+
+
+Token: IDENTIFICATOR            Value: begin
+Token: ELSE                     Value: {
+Token: NEWLINE                  Value:
+
+Token: IDENTIFICATOR            Value: var
+Token: IDENTIFICATOR            Value: n
+Token: ASSIGN                   Value: :=
+Token: INTERGER                 Value: 1
+Token: ELSE                     Value: ;
+Token: NEWLINE                  Value:
+
+Token: IDENTIFICATOR            Value: in
+Token: IDENTIFICATOR            Value: n
+Token: ELSE                     Value: ;
+Token: NEWLINE                  Value:
+
+Token: NEWLINE                  Value:
+
+Token: IDENTIFICATOR            Value: array
+Token: IDENTIFICATOR            Value: A
+Token: ELSE                     Value: [
+Token: IDENTIFICATOR            Value: n
+Token: ELSE                     Value: ]
+Token: ELSE                     Value: ;
+Token: NEWLINE                  Value:
+
+Token: IDENTIFICATOR            Value: var
+Token: IDENTIFICATOR            Value: i
+Token: ASSIGN                   Value: :=
+Token: INTERGER                 Value: 0
+Token: ELSE                     Value: ;
+Token: NEWLINE                  Value:
+
+Token: IDENTIFICATOR            Value: while
+Token: ELSE                     Value: (
+Token: IDENTIFICATOR            Value: i
+Token: ELSE                     Value: <
+Token: IDENTIFICATOR            Value: n
+Token: ELSE                     Value: )
+Token: ELSE                     Value: {
+Token: NEWLINE                  Value:
+
+Token: IDENTIFICATOR            Value: in
+Token: IDENTIFICATOR            Value: A
+Token: ELSE                     Value: [
+Token: IDENTIFICATOR            Value: i
+Token: ELSE                     Value: ]
+Token: ELSE                     Value: ;
+Token: NEWLINE                  Value:
+
+Token: IDENTIFICATOR            Value: i
+Token: ASSIGN                   Value: :=
+Token: IDENTIFICATOR            Value: i
+Token: ELSE                     Value: +
+Token: INTERGER                 Value: 1
+Token: ELSE                     Value: ;
+Token: NEWLINE                  Value:
+
+Token: ELSE                     Value: }
+Token: NEWLINE                  Value:
+
+Token: NEWLINE                  Value:
+
+Token: IDENTIFICATOR            Value: i
+Token: ASSIGN                   Value: :=
+Token: INTERGER                 Value: 0
+Token: ELSE                     Value: ;
+Token: NEWLINE                  Value:
+
+Token: IDENTIFICATOR            Value: j
+Token: ASSIGN                   Value: :=
+Token: INTERGER                 Value: 1
+Token: ELSE                     Value: ;
+Token: NEWLINE                  Value:
+
+Token: IDENTIFICATOR            Value: while
+Token: ELSE                     Value: (
+Token: IDENTIFICATOR            Value: i
+Token: ELSE                     Value: <
+Token: IDENTIFICATOR            Value: n
+Token: ELSE                     Value: )
+Token: ELSE                     Value: {
+Token: NEWLINE                  Value:
+
+Token: IDENTIFICATOR            Value: while
+Token: ELSE                     Value: (
+Token: IDENTIFICATOR            Value: j
+Token: ELSE                     Value: <
+Token: IDENTIFICATOR            Value: n
+Token: ELSE                     Value: )
+Token: ELSE                     Value: {
+Token: NEWLINE                  Value:
+
+Token: IDENTIFICATOR            Value: if
+Token: ELSE                     Value: (
+Token: IDENTIFICATOR            Value: A
+Token: ELSE                     Value: [
+Token: IDENTIFICATOR            Value: i
+Token: ELSE                     Value: ]
+Token: ELSE                     Value: >
+Token: IDENTIFICATOR            Value: A
+Token: ELSE                     Value: [
+Token: IDENTIFICATOR            Value: j
+Token: ELSE                     Value: ]
+Token: ELSE                     Value: )
+Token: IDENTIFICATOR            Value: then
+Token: ELSE                     Value: {
+Token: NEWLINE                  Value:
+
+Token: IDENTIFICATOR            Value: var
+Token: IDENTIFICATOR            Value: temp
+Token: ASSIGN                   Value: :=
+Token: IDENTIFICATOR            Value: A
+Token: ELSE                     Value: [
+Token: IDENTIFICATOR            Value: i
+Token: ELSE                     Value: ]
+Token: ELSE                     Value: ;
+Token: NEWLINE                  Value:
+
+Token: IDENTIFICATOR            Value: A
+Token: ELSE                     Value: [
+Token: IDENTIFICATOR            Value: i
+Token: ELSE                     Value: ]
+Token: ASSIGN                   Value: :=
+Token: IDENTIFICATOR            Value: A
+Token: ELSE                     Value: [
+Token: IDENTIFICATOR            Value: j
+Token: ELSE                     Value: ]
+Token: ELSE                     Value: ;
+Token: NEWLINE                  Value:
+
+Token: IDENTIFICATOR            Value: A
+Token: ELSE                     Value: [
+Token: IDENTIFICATOR            Value: j
+Token: ELSE                     Value: ]
+Token: ASSIGN                   Value: :=
+Token: IDENTIFICATOR            Value: temp
+Token: ELSE                     Value: ;
+Token: NEWLINE                  Value:
+
+Token: ELSE                     Value: }
+Token: NEWLINE                  Value:
+
+Token: IDENTIFICATOR            Value: j
+Token: ASSIGN                   Value: :=
+Token: IDENTIFICATOR            Value: j
+Token: ELSE                     Value: +
+Token: INTERGER                 Value: 1
+Token: ELSE                     Value: ;
+Token: NEWLINE                  Value:
+
+Token: ELSE                     Value: }
+Token: NEWLINE                  Value:
+
+Token: IDENTIFICATOR            Value: i
+Token: ASSIGN                   Value: :=
+Token: IDENTIFICATOR            Value: i
+Token: ELSE                     Value: +
+Token: INTERGER                 Value: 1
+Token: ELSE                     Value: ;
+Token: NEWLINE                  Value:
+
+Token: ELSE                     Value: }
+Token: NEWLINE                  Value:
+
+Token: NEWLINE                  Value:
+
+Token: IDENTIFICATOR            Value: i
+Token: ASSIGN                   Value: :=
+Token: INTERGER                 Value: 0
+Token: ELSE                     Value: ;
+Token: NEWLINE                  Value:
+
+Token: IDENTIFICATOR            Value: while
+Token: ELSE                     Value: (
+Token: IDENTIFICATOR            Value: i
+Token: ELSE                     Value: <
+Token: IDENTIFICATOR            Value: n
+Token: ELSE                     Value: )
+Token: ELSE                     Value: {
+Token: NEWLINE                  Value:
+
+Token: IDENTIFICATOR            Value: out
+Token: IDENTIFICATOR            Value: A
+Token: ELSE                     Value: [
+Token: IDENTIFICATOR            Value: i
+Token: ELSE                     Value: ]
+Token: ELSE                     Value: ;
+Token: NEWLINE                  Value:
+
+Token: IDENTIFICATOR            Value: i
+Token: ASSIGN                   Value: :=
+Token: IDENTIFICATOR            Value: i
+Token: ELSE                     Value: +
+Token: INTERGER                 Value: 1
+Token: ELSE                     Value: ;
+Token: NEWLINE                  Value:
+
+Token: ELSE                     Value: }
+Token: NEWLINE                  Value:
+
+Token: NEWLINE                  Value:
+
+Token: ELSE                     Value: }
+Token: IDENTIFICATOR            Value: end
+Token: NEWLINE                  Value:
+
+----- RPN output -----
+Parse error at row 3 col 1: Expect ; after statement
+Parse error at row 3 col 3: Expected assignment operator :=
+Parse error at row 3 col 3: Expect ; after statement
+Parse error at row 3 col 4: Expected assignment operator :=
+Parse error at row 4 col 1: Expect ; after statement
+Parse error at row 5 col 1: Expect ; after statement
+Parse error at row 5 col 10: Array size must be integer
+Parse error at row 6 col 1: Expect ; after statement
+Parse error at row 7 col 1: Expect ; after statement
+Parse error at row 8 col 3: Expected assignment operator :=
+Parse error at row 8 col 3: Expect ; after statement
+Parse error at row 8 col 7: Expected assignment operator :=
+Parse error at row 9 col 1: Expect ; after statement
+Parse error at row 10 col 1: Expect ; after statement
+Parse error at row 11 col 1: Expect ; after statement
+Parse error at row 12 col 1: Expect ; after statement
+Parse error at row 13 col 1: Expect ; after statement
+Parse error at row 14 col 1: Expect ; after statement
+Parse error at row 16 col 5: Expected comparison operator
+Parse error at row 16 col 5: Expected symbol: )
+Parse error at row 16 col 6: Expect ; after statement
+Parse error at row 16 col 7: Expected assignment operator :=
+Parse error at row 16 col 7: Expect ; after statement
+Parse error at row 16 col 8: Expect ; after statement
+Parse error at row 16 col 9: Expect ; after statement
+Parse error at row 16 col 13: Expected assignment operator :=
+Parse error at row 16 col 13: Expect ; after statement
+Parse error at row 16 col 14: Expect ; after statement
+Parse error at row 16 col 18: Expected assignment operator :=
+Parse error at row 16 col 18: Expect ; after statement
+Parse error at row 16 col 19: Expect ; after statement
+Parse error at row 17 col 1: Expect ; after statement
+Parse error at row 17 col 11: Expect ; after statement
+Parse error at row 17 col 12: Expect ; after statement
+Parse error at row 17 col 13: Expected assignment operator :=
+Parse error at row 17 col 13: Expect ; after statement
+Parse error at row 18 col 1: Expect ; after statement
+Parse error at row 18 col 8: Expect ; after statement
+Parse error at row 18 col 9: Expect ; after statement
+Parse error at row 18 col 10: Expected assignment operator :=
+Parse error at row 18 col 10: Expect ; after statement
+Parse error at row 19 col 1: Expect ; after statement
+Parse error at row 20 col 1: Expect ; after statement
+Parse error at row 21 col 1: Expect ; after statement
+Parse error at row 22 col 1: Expect ; after statement
+Parse error at row 23 col 1: Expect ; after statement
+Parse error at row 24 col 1: Expect ; after statement
+Parse error at row 25 col 1: Expect ; after statement
+Parse error at row 26 col 1: Expect ; after statement
+Parse error at row 27 col 1: Expect ; after statement
+Parse error at row 28 col 4: Expected assignment operator :=
+Parse error at row 28 col 4: Expect ; after statement
+Parse error at row 28 col 8: Expected assignment operator :=
+Parse error at row 29 col 1: Expect ; after statement
+Parse error at row 30 col 1: Expect ; after statement
+Parse error at row 31 col 1: Expect ; after statement
+Parse error at row 32 col 1: Expect ; after statement
+VAR_DECL                  n
+ID                        n
+INT                       1
+ASSIGN
+ID                        in
+ID                        n
+ARRAY_DECL                A
+ARRAY_SIZE                0
+I
+VAR_DECL                  i
+ID                        i
+INT                       0
+ASSIGN
+LABEL                     0
+ID                        i
+ID                        n
+OP                        <
+JF                        1
+ID                        in
+ID                        A
+ID                        i
+ID                        i
+I
+ID                        i
+INT                       1
+OP                        +
+ASSIGN
+J                         0
+LABEL                     1
+ID                        i
+I
+INT                       0
+ASSIGN
+ID                        j
+I
+INT                       1
+ASSIGN
+LABEL                     2
+ID                        i
+ID                        n
+OP                        <
+JF                        3
+LABEL                     4
+ID                        j
+ID                        n
+OP                        <
+JF                        5
+ID                        A
+JF                        6
+ID                        i
+ID                        A
+ID                        j
+ID                        then
+VAR_DECL                  temp
+ID                        temp
+ID                        A
+ASSIGN
+ID                        i
+ID                        A
+ID                        i
+I
+ID                        A
+ASSIGN
+ID                        j
+ID                        A
+ID                        j
+I
+ID                        temp
+ASSIGN
+LABEL                     6
+ID                        j
+I
+ID                        j
+INT                       1
+OP                        +
+ASSIGN
+J                         4
+LABEL                     5
+ID                        i
+I
+ID                        i
+INT                       1
+OP                        +
+ASSIGN
+J                         2
+LABEL                     3
+ID                        i
+I
+INT                       0
+ASSIGN
+LABEL                     7
+ID                        i
+ID                        n
+OP                        <
+JF                        8
+ID                        out
+ID                        A
+ID                        i
+ID                        i
+I
+ID                        i
+INT                       1
+OP                        +
+ASSIGN
+J                         7
+LABEL                     8

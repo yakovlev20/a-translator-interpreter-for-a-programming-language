@@ -1,125 +1,484 @@
+#pragma once
 #include <iostream>
 #include <vector>
-#include <stack>
-#include <unordered_map>
 #include <string>
+#include <variant>
+#include <unordered_map>
+#include <sstream>
+#include "Token.h"
+#include "ParserToken.h"
 
 class Parser {
 private:
-    std::stack<int> labelStack;        // Стек для хранения меток
-    std::vector<std::string> rpn;     // Выход в обратной польской записи (ОПЗ)
-    std::unordered_map<std::string, std::vector<int>> arrays; // Карта массивов
-    bool arrayMode = false;            // Флаг, указывающий режим обработки массивов
+    struct Position { int row = 1; int col = 1; };
+    const vector<string> keywords = {
+        "var",
+        "const",
+        "array",
+        "if",
+        "else",
+        "while",
+        "begin",
+        "end",
+        "get",
+        "print",
+        "in",
+        "out",
+    };
+
+public:
+    vector<Token> tokens;
+    vector<Poken> output;
+    vector<Position> positions;
+    int index = 0;
+    int labelCounter = 0;
+    bool hasError = false;
 
 
 public:
-    // Метод 1: Начать программный блок и поместить метку в стек
-    void program1(int k) {
-        labelStack.push(k);
-        rpn.push_back("LABEL_PLACEHOLDER"); // Заполнитель для метки
-        rpn.push_back("jf");             // Переход, если ложь
-    }
-
-    // Метод 2: Обработать метку и добавить инструкции перехода
-    void program2(int k) {
-        if (!labelStack.empty()) {
-            int topLabel = labelStack.top();
-            // Обновить предыдущую метку
-            updateLabel(topLabel, k);
+    Parser(const vector<Token>& tokens) {
+        for (const auto& token : tokens) {
+            this->tokens.push_back(token);
         }
-        labelStack.push(k);
-        rpn.push_back("LABEL_PLACEHOLDER");
-        rpn.push_back("j"); // Безусловный переход
+        buildPositions();
     }
 
-    // Метод 3: Обновить верхнюю метку в стеке текущим значением
-    void program3(int k) {
-        if (!labelStack.empty()) {
-            updateLabel(labelStack.top(), k);
-        }
+    vector<Poken> parse() {
+        skipNewlines();
+        parseProgram();
+        return output;
     }
 
-    // Метод 4: Поместить новую метку в стек меток
-    void program4(int k) {
-        labelStack.push(k);
+private:
+    bool hasNext() const {
+        return index < tokens.size();
+    }
+    const Token& peek() const {
+        return tokens[index];
+    }
+    const Token& advance() {
+        return tokens[index++];
     }
 
-    // Метод 5: Создать новую метку (i+2) и добавить инструкцию перехода
-    void program5(int i) {
-        int newLabel = i + 2;
-        if (!labelStack.empty()) {
-            updateLabel(labelStack.top(), newLabel);
-        }
-        rpn.push_back("LABEL_" + std::to_string(newLabel));
-        rpn.push_back("j");
-    }
-
-    // Метод 6: Выйти из режима обработки массивов
-    void program6() {
-        arrayMode = false;
-    }
-
-    // Метод 7: Войти в режим обработки массивов
-    void program7() {
-        arrayMode = true;
-    }
-
-    // Метод 8: Объявить новый массив
-    bool program8(const std::string& arrayName) {
-        // Проверить, существует ли массив уже в карте
-        if (arrays.find(arrayName) != arrays.end()) {
-            std::cerr << "Ошибка: Массив " << arrayName << " уже объявлен!\n";
-            return false;
-        }
-
-        // Если в режиме обработки массивов, создать новый пустой массив и добавить его в ОПЗ
-        if (arrayMode) {
-            arrays[arrayName] = std::vector<int>();
-            rpn.push_back("ARRAY_" + arrayName);
-            return true;
+    bool match(TokenType type, const string& text = "") const {
+        if (!hasNext()) return false;
+        const Token& t = peek();
+        if (t.type != type) return false;
+        if (text.empty()) return true;
+        if (holds_alternative<string>(t.value)) {
+            return get<string>(t.value) == text;
         }
         return false;
     }
 
-    // Метод 9: Выделить память для массива заданного размера
-    void program9(const std::string& arrayName, int size) {
-        auto it = arrays.find(arrayName);
-        if (it != arrays.end()) {
-            it->second.resize(size, 0); // Изменить размер массива с значениями по умолчанию (нули)
-            rpn.push_back("ALLOC_" + arrayName + "_" + std::to_string(size));
+
+    string tokenString(const Token& t) const {
+        if (holds_alternative<string>(t.value)) {
+            return get<string>(t.value);
         }
-        else {
-            std::cerr << "Ошибка: Массив " << arrayName << " не найден!\n";
-        }
+        return string();
     }
-
-private:
-    // Вспомогательный метод: Обновить метку в ОПЗ новым значением
-    void updateLabel(int oldLabel, int newLabel) {
-        std::string oldLabelStr = "LABEL_" + std::to_string(oldLabel);
-        std::string newLabelStr = "LABEL_" + std::to_string(newLabel);
-
-        for (auto& item : rpn) {
-            if (item == oldLabelStr) {
-                item = newLabelStr;
+    int tokenInt(const Token& t) const {
+        if (holds_alternative<int>(t.value)) {
+            return get<int>(t.value);
+        }
+        return 0;
+    }
+    double tokenDouble(const Token& t) const {
+        if (holds_alternative<double>(t.value)) {
+            return get<double>(t.value);
+        }
+        return 0.0;
+    }
+    string tokenText(const Token& t) const {
+        if (t.type == NEWLINE) {
+            return "\n";
+        }
+        if (holds_alternative<string>(t.value)) {
+            return get<string>(t.value);
+        }
+        if (holds_alternative<int>(t.value)) {
+            return to_string(get<int>(t.value));
+        }
+        if (holds_alternative<double>(t.value)) {
+            ostringstream oss;
+            oss << get<double>(t.value);
+            return oss.str();
+        }
+        return string();
+    }
+    int tokenLength(const Token& t) const {
+        if (t.type == NEWLINE) return 0;
+        return (int)tokenText(t).size();
+    }
+    void buildPositions() {
+        positions.clear();
+        positions.reserve(tokens.size());
+        int row = 1;
+        int col = 1;
+        for (const auto& token : tokens) {
+            positions.push_back({row, col});
+            if (token.type == NEWLINE) {
+                row++;
+                col = 1;
+            } else {
+                col += tokenLength(token);
             }
         }
     }
+    Position currentPosition() const {
+        if (!positions.empty()) {
+            if (index < (int)positions.size()) {
+                return positions[index];
+            }
+            return positions.back();
+        }
+        return Position{1,1};
+    }
+    void reportError(const string& message) const {
+        Position pos = currentPosition();
+        cerr << "Parse error at row " << pos.row << " col " << pos.col << ": " << message << endl;
+    }
 
-public:
-    // Вывести текущую последовательность в ОПЗ
-    void printRPN() const {
-        std::cout << "ОПЗ:\n";
-        for (const auto& item : rpn) {
-            std::cout << item << "\n";
+    int newLabel() {
+        return labelCounter++;
+    }
+    void skipNewlines() {
+        while (hasNext() && peek().type == NEWLINE) {
+            advance();
         }
     }
 
-    // Сбросить состояние анализатора (очистить все структуры данных)
-    void reset() {
-        while (!labelStack.empty()) labelStack.pop();
-        rpn.clear();
-        arrays.clear();
-        arrayMode = false;
+    void parseDelimiter() {
+        skipNewlines();
+        if (hasNext() && isSymbol(";")) {
+            advance();
+            return;
+        }
+        reportError("Expect ; after statement");
+    }
+
+    bool checkIdent(const string& word) const {
+        return hasNext() && peek().type == IDENTIFICATOR && tokenString(peek()) == word;
+    }
+
+    bool isSymbol(const string& symbol) const {
+        if (!hasNext()) return false;
+        const auto& t = peek();
+        return (t.type == ELSE || t.type == DELIMITER || t.type == ASSIGN) && tokenString(t) == symbol;
+    }
+    bool containsKeyword(string key) const {
+        for (auto& i : keywords) if (key == i) return true;
+        return false;
+    }
+
+    void expectKeyword(string outName) {
+        if (!hasNext() || peek().type != IDENTIFICATOR || !containsKeyword(tokenString(peek()))) {
+            reportError("Expected keyword: " + outName);
+            return;
+        }
+        advance();
+    }
+    void expectIdentifier(string& outName) {
+        if (!hasNext() || peek().type != IDENTIFICATOR) {
+            reportError("Expected identifier");
+            return;
+        }
+        outName = tokenString(peek());
+        advance();
+    }
+    void expectSymbol(const string& symbol) {
+        if (!isSymbol(symbol)) {
+            reportError("Expected symbol: " + symbol);
+            return;
+        }
+        advance();
+    }
+
+    void parseProgram() {
+        expectKeyword("begin");
+        expectSymbol("{"); 
+        parseStatements();
+        expectSymbol("}"); 
+        expectKeyword("end");
+    }
+    void parseStatements() {
+
+        skipNewlines();
+        while (hasNext() && !isSymbol("}") && !checkIdent("else")) {
+            parseStatement();
+            if (hasNext() && !isSymbol("}") && !checkIdent("else")) {
+                parseDelimiter();
+            }
+            skipNewlines();
+        }
+        skipNewlines();
+    }
+
+    void parseStatement() {
+        if (!hasNext()) return;
+
+        if (checkIdent("print")) {
+            parsePrint();
+            return;
+        }
+        if (checkIdent("get")) {
+            parseGet();
+            return;
+        }
+        if (checkIdent("if")) {
+            parseIf();
+            return;
+        }
+        if (checkIdent("while")) {                                //
+            parseWhile();
+            return;
+        }
+        if (checkIdent("var")) {
+            parseVariable();
+            return;
+        }
+        if (checkIdent("const")) {
+            parseConstant();
+            return;
+        }
+        if (checkIdent("array")) {
+            parseArray();
+            return;
+        }
+        if (peek().type == IDENTIFICATOR) {         //Bez var/const/array/... -> Prisvaivanie
+            parseAssignment();
+            return;
+        }
+
+        advance();
+    }
+
+    void parsePrint() {
+        advance();
+        string name;
+        expectIdentifier(name);
+        output.emplace_back(PT_ID, name);
+        output.emplace_back(PT_PRINT, string("print"));
+    }
+
+    void parseGet() {
+        advance();
+        string name;
+        expectIdentifier(name);
+        output.emplace_back(PT_ID, name);
+        output.emplace_back(PT_GET, string("get"));
+    }
+
+    void parseIf() {
+        advance();
+        expectSymbol("(");
+        parseCondition();
+        expectSymbol(")");
+
+        int falseLabel = newLabel();
+        output.emplace_back(PT_JF, falseLabel);
+
+        expectSymbol("{");
+        parseStatements();
+        expectSymbol("}");
+
+        if (checkIdent("else")) {
+            advance();
+            expectSymbol("{");
+            int endLabel = newLabel();
+            output.emplace_back(PT_J, endLabel);
+            output.emplace_back(PT_LABEL, falseLabel);
+            parseStatements();
+            output.emplace_back(PT_LABEL, endLabel);
+            expectSymbol("}");
+        } else {
+            output.emplace_back(PT_LABEL, falseLabel);
+        }
+    }
+
+    void parseWhile() {
+        advance();
+        expectSymbol("(");
+
+        int startLabel = newLabel();
+        output.emplace_back(PT_LABEL, startLabel);
+
+        parseCondition();
+        expectSymbol(")");
+
+        int endLabel = newLabel();
+        output.emplace_back(PT_JF, endLabel);
+
+        expectSymbol("{");
+        parseStatements();
+        output.emplace_back(PT_J, startLabel);
+        output.emplace_back(PT_LABEL, endLabel);
+        expectSymbol("}");
+    }
+
+    void parseVariable() {
+        advance();
+        string name;
+        expectIdentifier(name);
+
+        output.emplace_back(PokenType::PT_VAR_DECL, name);
+        if (isSymbol("[")) reportError("Unexpected pointer indexing");
+        if (match(ASSIGN, ":=")) {
+            advance();
+            output.emplace_back(PT_ID, name);
+            parseExpression();
+            output.emplace_back(PT_ASSIGN, string("assign"));
+        }
+    }
+    void parseConstant() {
+        advance();
+        string name;
+        expectIdentifier(name);
+
+        output.emplace_back(PokenType::PT_CONST_DECL, name);
+
+        expectSymbol(":=");
+        advance();
+        output.emplace_back(PT_ID, name);
+        parseExpression();
+        output.emplace_back(PT_ASSIGN, string("assign"));
+    }
+    void parseArray() {
+        advance();
+        string name;
+        expectIdentifier(name);
+        expectSymbol("[");
+        int size = 0;
+        if (!hasNext()) {
+            reportError("Expected array size");
+            return;
+        }
+        if (peek().type == INTERGER) {
+            size = tokenInt(peek());
+            advance();
+        } else if (peek().type == IDENTIFICATOR) {
+            // Dynamic array size by identifier is allowed syntactically.
+            advance();
+        } else {
+            reportError("Array size must be integer or identifier");
+            return;
+        }
+        expectSymbol("]");
+        output.emplace_back(PT_ARRAY_DECL, name);
+        output.emplace_back(PT_ARRAY_SIZE, size);
+        output.emplace_back(PT_I, string("&I"));
+    }
+
+    void parseAssignment() {
+        string name = tokenString(peek());
+        advance();
+
+        output.emplace_back(PT_ID, name);
+        bool isArrayAssignment = false;
+        if (isSymbol("[")) {
+            isArrayAssignment = true;
+            advance();
+            parseExpression();
+            expectSymbol("]");
+        }
+
+        if (!match(ASSIGN, ":=")) {
+            reportError("Expected assignment operator :=");
+            return;
+        }
+        advance();
+        if (isArrayAssignment) {
+            output.emplace_back(PT_I, string("&I"));
+        }
+        parseExpression();
+        output.emplace_back(PT_ASSIGN, string("assign"));
+    }
+    void parseCondition() {
+        parseExpression();
+        if (!hasNext()) {
+            reportError("Expected comparison operator");
+            return;
+        }
+        string op;
+        if (isSymbol("<") || isSymbol(">") || isSymbol("=") || isSymbol("!=")) {
+            op = tokenString(peek());
+            advance();
+        } else {
+            reportError("Expected comparison operator");
+            return;
+        }
+        parseExpression();
+        output.emplace_back(PT_OP, op);
+    }
+    void parseExpression() {
+        parseTerm();
+        while (hasNext() && (isSymbol("+") || isSymbol("-"))) {
+            string op = tokenString(peek());
+            advance();
+            parseTerm();
+            output.emplace_back(PT_OP, op);
+        }
+    }
+    void parseTerm() {
+        parseFactor();
+        while (hasNext() && (isSymbol("*") || isSymbol("/"))) {
+            string op = tokenString(peek());
+            advance();
+            parseFactor();
+            output.emplace_back(PT_OP, op);
+        }
+    }
+    void parseFactor() {
+        if (isSymbol("(")) {
+            advance();
+            parseExpression();
+            expectSymbol(")");
+            return;
+        }
+        if (!hasNext()) {
+            reportError("Unexpected end of expression");
+            return;
+        }
+        if (peek().type == INTERGER) {
+            int value = tokenInt(peek());
+            advance();
+            output.emplace_back(PT_INT, value);
+            return;
+        }
+        if (peek().type == FLOAT) {
+            double value = tokenDouble(peek());
+            advance();
+            output.emplace_back(PT_FLOAT, value);
+            return;
+        }
+        if (peek().type == IDENTIFICATOR) {
+            string name = tokenString(peek());
+            advance();
+            output.emplace_back(PT_ID, name);
+            if (isSymbol("[")) {
+                advance();
+                parseExpression();
+                expectSymbol("]");
+                output.emplace_back(PT_I, string("&I"));
+            }
+            return;
+        }
+
+        reportError("Unexpected token in expression");
+        return;
+    }
+
+    int extractIntFromLastValue() {
+        if (output.empty()) {
+            reportError("Expected size value on stack");
+            return 0;
+        }
+        const Poken& last = output.back();
+        if (last.type != PT_INT) {
+            reportError("Array size must be integer");
+            return 0;
+        }
+        return get<int>(last.value);
     }
 };
